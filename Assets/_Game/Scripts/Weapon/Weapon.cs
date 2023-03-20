@@ -7,13 +7,6 @@ public class Weapon : GameUnit
     public float Damage;
     public float ATKSpeed;
     public float ATKRange;
-    public Upgrade[] UpgradeList;
-
-
-    public override void OnInit()
-    {
-
-    }
 
     public override void OnDespawn()
     {

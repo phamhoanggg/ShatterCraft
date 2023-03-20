@@ -18,7 +18,7 @@ public class UI_Manager : FastSingleton<UI_Manager>
 
     public Transform CanvasParentTF;
     public CanvasScaler Scaler;
-    public UIGamePlay GamePlayObject;
+    
 
     #region Canvas
 

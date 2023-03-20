@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: f72e39aba9d8ed04f91d36ecc8dc38ac, type: 2}
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &46891680
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,59 +471,23 @@ MonoBehaviour:
     collect: 1
   - root: {fileID: 1050643068}
     prefab: {fileID: 3672962573449634632, guid: eacab7b743b76fe49a51f1ca6e8ca2b8, type: 3}
-    amount: 2
-    collect: 1
-  - root: {fileID: 287938948}
-    prefab: {fileID: 1772069581998000326, guid: 44e6e40b0db393244b52972dc096a480, type: 3}
-    amount: 1
-    collect: 1
-  - root: {fileID: 287938948}
-    prefab: {fileID: 65145755660345484, guid: ae97ddf3159eca34c832ce5743c2f492, type: 3}
-    amount: 1
-    collect: 1
-  - root: {fileID: 287938948}
-    prefab: {fileID: 756271123657805732, guid: be98ce7b3d34e3446b168720b0abc472, type: 3}
-    amount: 1
+    amount: 0
     collect: 1
   - root: {fileID: 1050643068}
     prefab: {fileID: 6980703326618285750, guid: f788e989f0da4a6469a3c9a27844aef8, type: 3}
-    amount: 2
-    collect: 1
-  - root: {fileID: 287938948}
-    prefab: {fileID: 3722801127220133319, guid: 890f4c408636f894b9b0be472ebd3549, type: 3}
-    amount: 1
-    collect: 1
-  - root: {fileID: 287938948}
-    prefab: {fileID: 44747802958540840, guid: bdcf38b0f34ea5b4f94eff13f75f028b, type: 3}
-    amount: 1
-    collect: 1
-  - root: {fileID: 287938948}
-    prefab: {fileID: 425623500839176530, guid: 4dc735ef134657146bcae4cd065b68aa, type: 3}
-    amount: 1
-    collect: 1
-  - root: {fileID: 580356946}
-    prefab: {fileID: 5623473814998507814, guid: 097ec356173904f4d994e5b2eb874bd7, type: 3}
-    amount: 1
-    collect: 1
-  - root: {fileID: 1050643068}
-    prefab: {fileID: 4708779893341131625, guid: 008573ec694e6e84381a031ebf3d1a27, type: 3}
-    amount: 1
+    amount: 0
     collect: 1
   - root: {fileID: 1050643068}
     prefab: {fileID: 482477743294600843, guid: 86161e8a874c0cc4ba729424e2c64a44, type: 3}
-    amount: 1
+    amount: 0
     collect: 1
-  - root: {fileID: 287938948}
-    prefab: {fileID: 44747802958540840, guid: c90a8973edf818749bca5ca28b244369, type: 3}
-    amount: 1
+  - root: {fileID: 1050643068}
+    prefab: {fileID: 4708779893341131625, guid: 008573ec694e6e84381a031ebf3d1a27, type: 3}
+    amount: 0
     collect: 1
-  - root: {fileID: 287938948}
-    prefab: {fileID: 44747802958540840, guid: b4bc02d6bc481e34b9813272d597c190, type: 3}
-    amount: 1
-    collect: 1
-  - root: {fileID: 287938948}
-    prefab: {fileID: 44747802958540840, guid: 773f482302e3b504eb93f013005a4426, type: 3}
-    amount: 1
+  - root: {fileID: 580356946}
+    prefab: {fileID: 5623473814998507814, guid: 097ec356173904f4d994e5b2eb874bd7, type: 3}
+    amount: 0
     collect: 1
   Particle:
   - root: {fileID: 952537410}
@@ -699,7 +663,6 @@ MonoBehaviour:
   - {fileID: 7405530345406990934, guid: 0ba12c5b12993bb4aa7c33eb7ae8879f, type: 3}
   CanvasParentTF: {fileID: 863249318}
   Scaler: {fileID: 863249316}
-  GamePlayObject: {fileID: 78898504658077991, guid: 7987724f3d2c38d4394ef14440a67a4a, type: 3}
 --- !u!1 &952537409
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,7 +844,16 @@ MonoBehaviour:
   - {fileID: 3672962573449634632, guid: eacab7b743b76fe49a51f1ca6e8ca2b8, type: 3}
   - {fileID: 6980703326618285750, guid: f788e989f0da4a6469a3c9a27844aef8, type: 3}
   - {fileID: 482477743294600843, guid: 86161e8a874c0cc4ba729424e2c64a44, type: 3}
-  UpgradeList: []
+  UpgradeList:
+  - {fileID: 11400000, guid: 24b19cec5f34ba54b8a6e6d8a7382210, type: 2}
+  - {fileID: 11400000, guid: aa43ef3f36ca83a4ebf2606e0eeea41b, type: 2}
+  - {fileID: 11400000, guid: 7fca5622c26fb0b4ab0878c2fff6ea97, type: 2}
+  - {fileID: 11400000, guid: 53580819a025e3f49ba1f1bccfcc1c51, type: 2}
+  - {fileID: 11400000, guid: eb9cc0ba5058a71488d3385884c4786c, type: 2}
+  - {fileID: 11400000, guid: c472a63e15fca5a4db2b0dd2f3a0e71e, type: 2}
+  - {fileID: 11400000, guid: 12494fea8de94b548a9a513c88c7dfb2, type: 2}
+  - {fileID: 11400000, guid: 161b9369913dcb1439dc0e8b99172c9f, type: 2}
+  - {fileID: 11400000, guid: 63362abcb10bc0c4ead4a9a878d38af8, type: 2}
   SelectedWeapon: 0
   SelectedUpgrade: {fileID: 0}
   MainCamera: {fileID: 1308570507}
@@ -891,6 +863,7 @@ MonoBehaviour:
   ZombieLayer:
     serializedVersion: 2
     m_Bits: 64
+  GamePlayObject: {fileID: 0}
 --- !u!4 &1440293779
 Transform:
   m_ObjectHideFlags: 0

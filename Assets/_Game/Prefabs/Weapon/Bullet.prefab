@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d62c4bfa5638dbe43a9f9b79f2cdb30c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolType: 15
+  poolType: 6
   bulletTf: {fileID: 4708779893341131624}
   speed: 4
 --- !u!33 &4708779893341131627

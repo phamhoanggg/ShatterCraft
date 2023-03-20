@@ -54,7 +54,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cb6340f704d5354fb22ee7a74be69a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolType: 10
+  poolType: 4
   pointText: {fileID: 7303404422636545142}
   rectTf: {fileID: 7765282365463917166}
 --- !u!223 &2278168097379826639
@@ -213,8 +213,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294948352
-  m_fontColor: {r: 0, g: 0.7139354, b: 1, a: 1}
+    rgba: 4292476685
+  m_fontColor: {r: 0.051112354, g: 1, b: 0.8509551, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

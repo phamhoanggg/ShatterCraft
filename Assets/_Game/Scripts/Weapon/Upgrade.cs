@@ -8,22 +8,32 @@ public class Upgrade : GameUnit
 {
     public Enums.UpgradeType Type;
     public PoolType WeaponType;
-    private RectTransform m_RectTransform;
     public float cost;
     [SerializeField] private TMP_Text costText;
-    private Button btn;
+    [SerializeField] private Image weaponImg;
+    [SerializeField] private TMP_Text typeText;
+    [SerializeField] private Button btn;
 
-
-    private void Awake()
-    {
-        GameManager.instance.UpgradeList.Add(this);
-        m_RectTransform = GetComponent<RectTransform>();
-        btn = GetComponent<Button>();
-        costText.text = cost.ToString();
-    }
 
     private void OnEnable()
     {
+        
+    }
+    public override void OnDespawn()
+    {
+        SimplePool.Despawn(this);
+    }
+
+    public void SetValue(UpgradeTypeConfig config)
+    {
+        Type = config.Type;
+        WeaponType = config.WeaponType;
+        cost = config.Cost;
+        weaponImg.sprite = config.WeaponSprite;
+
+        typeText.text = Type.ToString();
+        costText.text = cost.ToString();
+
         if (cost > GameManager.instance.CoinAmount)
         {
             btn.interactable = false;
@@ -33,13 +43,5 @@ public class Upgrade : GameUnit
             btn.interactable = true;
         }
     }
-    public override void OnDespawn()
-    {
-        SimplePool.Despawn(this);
-    }
-    public void SetParentTF(RectTransform parent)
-    {
-        m_RectTransform.SetParent(parent);
-        m_RectTransform.anchoredPosition = Vector3.zero;
-    }
+
 }

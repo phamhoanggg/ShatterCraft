@@ -147,17 +147,8 @@ public enum PoolType
     ChainSaw,
     Hammer,
     Zombie,
-    ChainSawAdd,
-    ChainSawSize,
-    ChainSawSpeed,
-    HammerAdd,
-    HammerSpeed,
-    HammerSize,
     PointText,
     FlashGun,
-    FlashGunAdd,
-    FlashGunSpeed,
-    FlashGunRange,
     Bullet,
 }
 

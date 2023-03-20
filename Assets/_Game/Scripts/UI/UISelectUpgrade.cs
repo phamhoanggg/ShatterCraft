@@ -5,15 +5,14 @@ using UnityEngine.EventSystems;
 
 public class UISelectUpgrade : UICanvas
 {
-    [SerializeField] RectTransform[] selections;
-    private Upgrade[] upgrades;
+    [SerializeField] private Upgrade[] upgradesBtn;
+    private UpgradeTypeConfig[] upgrades;
     private void OnEnable()
     {
-        upgrades = GameManager.instance.DisplayUpgrade();
+        upgrades = GameManager.instance.GetUpgrade();
         for (int i = 0; i < 3; i++)
         {
-            Upgrade upgrade = SimplePool.Spawn<Upgrade>(upgrades[i].poolType);
-            upgrade.SetParentTF(selections[i]);
+            upgradesBtn[i].SetValue(upgrades[i]);
         }
     }
     public void ClickUpgradeButton()
@@ -32,9 +31,6 @@ public class UISelectUpgrade : UICanvas
 
     private void OnDisable()
     {
-        for (int i = 0; i < 3; i++)
-        {
-            upgrades[i].OnDespawn();
-        }
+        
     }
 }

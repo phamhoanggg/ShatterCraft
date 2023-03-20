@@ -49,14 +49,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b422975b9675dfb448c4170e4c938acf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolType: 11
-  Damage: 15
-  ATKSpeed: 0.5
+  poolType: 5
+  Damage: 4
+  ATKSpeed: 1
   ATKRange: 2
-  UpgradeList:
-  - {fileID: 44747802958540840, guid: c90a8973edf818749bca5ca28b244369, type: 3}
-  - {fileID: 44747802958540840, guid: b4bc02d6bc481e34b9813272d597c190, type: 3}
-  - {fileID: 44747802958540840, guid: 773f482302e3b504eb93f013005a4426, type: 3}
   cannon: {fileID: 482477744035617463}
   col: {fileID: 5873547598613309271}
 --- !u!33 &482477743294600841

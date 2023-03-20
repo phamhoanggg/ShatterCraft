@@ -539,7 +539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathCreator: {fileID: 0}
   endOfPathInstruction: 2
-  speed: 0.4
+  speed: 0.5
   zombieTf: {fileID: 2662980190217024995}
 --- !u!1 &3588855003229091531
 GameObject:

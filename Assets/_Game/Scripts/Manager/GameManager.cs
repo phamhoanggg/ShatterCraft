@@ -13,7 +13,7 @@ public class GameManager : FastSingleton<GameManager>
     public IState SetPlaceWeaponPhase = new SetPlaceWeaponState();
 
     
-    public List<Upgrade> UpgradeList = new List<Upgrade>();
+    public List<UpgradeTypeConfig> UpgradeList = new List<UpgradeTypeConfig>();
     
     public PoolType SelectedWeapon = PoolType.None;
     public Upgrade SelectedUpgrade;
@@ -23,16 +23,22 @@ public class GameManager : FastSingleton<GameManager>
 
     public float CoinAmount { get; private set; }
 
+    public UIGamePlay GamePlayObject;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        GamePlayObject = UI_Manager.instance.OpenUI<UIGamePlay>();
+    }
     // Start is called before the first frame update
     void Start()
     {
-        LevelController.instance.StartLevel();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        UI_Manager.instance.GamePlayObject.CoinText.text = CoinAmount.ToString();
 
         if (gamePhase != null)
         {
@@ -44,10 +50,8 @@ public class GameManager : FastSingleton<GameManager>
             Ray myRay = MainCamera.ScreenPointToRay(Input.mousePosition);
             Debug.DrawRay(myRay.origin, myRay.direction * 100, Color.red);
             if (Physics.Raycast(myRay, out RaycastHit hit, 100, ZombieLayer))
-            {
-                Debug.Log(Input.mousePosition + " " + MainCamera.WorldToScreenPoint(hit.transform.position));
-                
-                //Cache.GetZombie(hit.collider).OnHit(10);
+            {   
+                Cache.GetZombie(hit.collider).OnHit(5);
             }
         }
     }
@@ -102,10 +106,10 @@ public class GameManager : FastSingleton<GameManager>
         gameState = Enums.GameState.Playing;
     }
 
-    public Upgrade[] DisplayUpgrade()
+    public UpgradeTypeConfig[] GetUpgrade()
     {
-        Upgrade[] upgradeLst = new Upgrade[3];
-        List<Upgrade> availUpgrades = new List<Upgrade>();
+        UpgradeTypeConfig[] upgradeLst = new UpgradeTypeConfig[3];
+        List<UpgradeTypeConfig> availUpgrades = new List<UpgradeTypeConfig>();
 
         WeaponPlace[] weaponPlaces = LevelController.instance.CurrentLevel.WeaponPlacesList;
         // Check if there is available place for new weapon
@@ -159,7 +163,8 @@ public class GameManager : FastSingleton<GameManager>
 
     public void SetCoin(float value)
     {
+        Debug.Log("Set Coin");
         CoinAmount = value;
-        
+        GamePlayObject.CoinText.text = CoinAmount.ToString();
     }
 }
