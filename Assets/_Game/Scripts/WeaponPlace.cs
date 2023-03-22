@@ -11,13 +11,13 @@ public enum Direct
 }
 public class WeaponPlace : MonoBehaviour
 {
-    [SerializeField] private Transform weaponPosition;
-    [SerializeField] private Animator anim;
-    [SerializeField] private Direct direction;
+    [SerializeField] protected Transform weaponPosition;
+    [SerializeField] protected Animator anim;
+    [SerializeField] protected Direct direction;
     public Weapon WeaponPlaced { get; private set; }
-    public bool IsPlaced { get; private set; }
+    public bool IsPlaced;
 
-    private void Start()
+    protected void Start()
     {
         IsPlaced = false;
         weaponPosition.rotation = Quaternion.Euler(0, (int)direction, 0);

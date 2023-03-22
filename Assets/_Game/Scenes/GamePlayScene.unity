@@ -776,7 +776,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 72
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -864,6 +864,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   GamePlayObject: {fileID: 0}
+  IsVibrate: 0
 --- !u!4 &1440293779
 Transform:
   m_ObjectHideFlags: 0
@@ -894,6 +895,7 @@ MonoBehaviour:
   listLevel:
   - {fileID: 1168016809463741022, guid: 79587f37ff979354da30d8ff2946ccfd, type: 3}
   - {fileID: 475335985735888950, guid: 8dc38de89c359d348b3279b743f36490, type: 3}
+  - {fileID: 4730315934710314661, guid: 197130bda0cab7f48931b69f7625b8e6, type: 3}
   CurrentLevel: {fileID: 0}
   curLevelIdx: 0
 --- !u!114 &1440293781

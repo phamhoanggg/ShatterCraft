@@ -10,5 +10,6 @@ public class UpgradeTypeConfig : ScriptableObject
     public Enums.UpgradeType Type;
     public PoolType WeaponType;
     public Sprite WeaponSprite;
+    public Sprite BGSprite;
     public float Cost;
 }

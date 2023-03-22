@@ -16,6 +16,9 @@ public class Level : MonoBehaviour
     public void OnInit()
     {
         Spawner.OnInit();
+        GameManager.instance.GamePlayObject.levelText.text = "LEVEL " + LevelController.instance.curLevelIdx;
+        GameManager.instance.GamePlayObject.SetLevelProgressValue(0);
+        GameManager.instance.GamePlayObject.SetWeaponProgressValue(0);
     }
 
     public void UpgradeWeapon(PoolType weaponType, Enums.UpgradeType action)

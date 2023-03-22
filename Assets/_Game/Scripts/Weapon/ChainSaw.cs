@@ -9,7 +9,11 @@ public class ChainSaw : Weapon
     // Update is called once per frame
     void Update()
     {
-        TF.rotation = Quaternion.Euler(0, Time.time * ATKSpeed, 0);
+        if (GameManager.instance.IsState(Enums.GameState.Playing))
+        {
+            TF.rotation = Quaternion.Euler(0, Time.time * ATKSpeed, 0);
+        }
+        
         sawTf.eulerAngles += new Vector3(0, 15, 0);
     }
 }

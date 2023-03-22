@@ -34,7 +34,7 @@ public class Zombie : GameUnit
         {
             currentHP -= dmg;
             ParticlePool.Play(ParticleType.Hit, zombieTf.position + Vector3.up * 2, Quaternion.Euler(-90, 0, 0));
-            Vibrator.Vibrate(250);
+            Vibrator.Vibrate(100);
             if (currentHP <= 0)
             {
                 Death();

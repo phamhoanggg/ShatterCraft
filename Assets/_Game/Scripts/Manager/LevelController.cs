@@ -37,7 +37,7 @@ public class LevelController : FastSingleton<LevelController>
         GameManager.instance.ChangeState(Enums.GameState.ChoosingWeapon);
         GameManager.instance.ChangePhase(GameManager.instance.SelectWeaponPhase);
         UI_Manager.instance.OpenUI<UIGamePlay>();
-        
+        CurrentLevel.OnInit();
     }
 
     public void EndLevel()
@@ -58,7 +58,16 @@ public class LevelController : FastSingleton<LevelController>
         }
         curLevelIdx++;
         CurrentLevel = Instantiate(listLevel[curLevelIdx - 1]);
-        CurrentLevel.OnInit();
+        StartLevel();
+    }
+
+    public void RePlayLevel()
+    {
+        SimplePool.CollectAll();
+        for (int i = 0; i < CurrentLevel.WeaponPlacesList.Length; i++)
+        {
+            CurrentLevel.WeaponPlacesList[i].IsPlaced = false;
+        }
         StartLevel();
     }
 

@@ -13,6 +13,7 @@ public class Upgrade : GameUnit
     [SerializeField] private Image weaponImg;
     [SerializeField] private TMP_Text typeText;
     [SerializeField] private Button btn;
+    [SerializeField] private Image bgImg;
 
 
     private void OnEnable()
@@ -30,6 +31,7 @@ public class Upgrade : GameUnit
         WeaponType = config.WeaponType;
         cost = config.Cost;
         weaponImg.sprite = config.WeaponSprite;
+        bgImg.sprite = config.BGSprite;
 
         typeText.text = Type.ToString();
         costText.text = cost.ToString();

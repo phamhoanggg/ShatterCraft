@@ -54,9 +54,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Spawner: {fileID: 475335986199835661}
-  LevelMaxValue: 30
+  LevelMaxValue: 40
   LevelProgressValue: 0
-  WeaponMaxValue: 50
+  WeaponMaxValue: 120
   WeaponProgressValue: 0
   WeaponPlacesList:
   - {fileID: 4829971205700655829}
@@ -149,7 +149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475335986199835663}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.904, y: 0, z: -1.847}
+  m_LocalPosition: {x: 3.364, y: 0, z: -1.847}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -228,8 +228,8 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: -0.69840884, y: 0, z: 2.283752}
-      - {x: 0.9111419, y: 0, z: 0.58741736}
+      - {x: -1.2108895, y: 0, z: 2.7388844}
+      - {x: 2.0355182, y: 0, z: 0.30613327}
       - {x: -1.4122698, y: 0, z: -0.17553961}
       - {x: -3.1429577, y: 0, z: -0.66889286}
       isClosed: 0
@@ -290,7 +290,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475335986485191568}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.54, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -435,8 +435,8 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: -0.62066877, y: 0, z: 2.4825168}
-      - {x: 0.5225167, y: 0, z: 1.550955}
+      - {x: -1.0612376, y: 0, z: 2.9489236}
+      - {x: 0.96088064, y: 0, z: 1.3914522}
       - {x: 0.59417343, y: 0, z: 0.20638984}
       - {x: -3.0317698, y: 0, z: -0.7961912}
       isClosed: 0
@@ -605,9 +605,9 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: -0.55624413, y: 0, z: 2.5787067}
-      - {x: 1.4464513, y: 0, z: -0.1809802}
-      - {x: -0.34523812, y: 0, z: 0.82645774}
+      - {x: -0.96509236, y: 0, z: 3.0522733}
+      - {x: 1.7066734, y: 0, z: 0.5889611}
+      - {x: -0.23600549, y: 0, z: 0.43910557}
       - {x: -3.0922883, y: 0, z: -0.73665476}
       isClosed: 0
       space: 2
@@ -641,7 +641,7 @@ MonoBehaviour:
     showVertexPathOptions: 1
     showNormals: 0
     showNormalsHelpInfo: 0
-    tabIndex: 1
+    tabIndex: 0
   initialized: 1
 --- !u!1 &475335987374229339
 GameObject:
@@ -778,8 +778,8 @@ MonoBehaviour:
       points:
       - {x: 0.73646545, y: 0, z: 0.5669662}
       - {x: 0.18543673, y: 0, z: -0.7165941}
-      - {x: 0.7779708, y: 0, z: -1.982749}
-      - {x: 2.5365586, y: 0, z: -1.5622262}
+      - {x: 0.830317, y: 0, z: -2.4731789}
+      - {x: 3.22547, y: 0, z: -1.3780093}
       isClosed: 0
       space: 2
       controlMode: 0
@@ -812,7 +812,7 @@ MonoBehaviour:
     showVertexPathOptions: 1
     showNormals: 0
     showNormalsHelpInfo: 0
-    tabIndex: 1
+    tabIndex: 0
   initialized: 1
 --- !u!114 &7516042946578073247
 MonoBehaviour:
@@ -861,7 +861,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6215013403145696063}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.6237407, y: -5.6377153, z: 1.4023509}
+  m_LocalPosition: {x: 6.0837407, y: -5.6377153, z: 1.4023509}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1140,7 +1140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5016793068725526556, guid: 80579c15be6e06e4ea900d74ea43c130, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.33
+      value: 4.79
       objectReference: {fileID: 0}
     - target: {fileID: 5016793068725526556, guid: 80579c15be6e06e4ea900d74ea43c130, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1178,6 +1178,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5016793068725526557, guid: 80579c15be6e06e4ea900d74ea43c130, type: 3}
+      propertyPath: direction
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5016793068725526560, guid: 80579c15be6e06e4ea900d74ea43c130, type: 3}
       propertyPath: m_Name
       value: WeaponPile (1)
@@ -1213,7 +1217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5016793068725526556, guid: 80579c15be6e06e4ea900d74ea43c130, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.92
+      value: 6.38
       objectReference: {fileID: 0}
     - target: {fileID: 5016793068725526556, guid: 80579c15be6e06e4ea900d74ea43c130, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1290,7 +1294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5016793068725526556, guid: 80579c15be6e06e4ea900d74ea43c130, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.99
+      value: 7.45
       objectReference: {fileID: 0}
     - target: {fileID: 5016793068725526556, guid: 80579c15be6e06e4ea900d74ea43c130, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1371,7 +1375,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7104471608986371404, guid: bf1992deb7637f14ba0084a8f07eba6d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.37
+      value: 6.83
       objectReference: {fileID: 0}
     - target: {fileID: 7104471608986371404, guid: bf1992deb7637f14ba0084a8f07eba6d, type: 3}
       propertyPath: m_LocalPosition.y

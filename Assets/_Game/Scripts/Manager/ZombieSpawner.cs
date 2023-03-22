@@ -11,6 +11,7 @@ public class ZombieSpawner : MonoBehaviour
 
     public void OnInit()
     {
+        CancelInvoke();
         zombieCounter = 0;
         InvokeRepeating(nameof(SpawnZombie), 0, 0.5f);
     }

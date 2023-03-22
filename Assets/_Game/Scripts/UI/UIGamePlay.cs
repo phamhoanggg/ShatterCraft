@@ -7,13 +7,10 @@ using TMPro;
 public class UIGamePlay : UICanvas
 {
     [SerializeField] private Slider levelProgressBar, weaponProgressBar;
-    [SerializeField] private TMP_Text levelText;
+    [SerializeField] private Image vibrateImg;
+    [SerializeField] private Sprite vibrateOn, vibrateOff;
+    public TMP_Text levelText;
     public TMP_Text CoinText;
-
-    private void OnEnable()
-    {
-        levelText.text = "LEVEL " + LevelController.instance.curLevelIdx;
-    }
 
     private void Update()
     {
@@ -28,5 +25,22 @@ public class UIGamePlay : UICanvas
     public void SetWeaponProgressValue(float val)
     {
         weaponProgressBar.value = val / LevelController.instance.CurrentLevel.WeaponMaxValue;
+    }
+
+    public void ClickSetting()
+    {
+        vibrateImg.gameObject.SetActive(vibrateImg.gameObject.activeInHierarchy ? false : true);
+        vibrateImg.sprite = GameManager.instance.IsVibrate ? vibrateOn : vibrateOff;
+    }
+
+    public void ClickReplay()
+    {
+        LevelController.instance.RePlayLevel();
+    }
+
+    public void ClickVibrateBtn()
+    {
+        GameManager.instance.IsVibrate = GameManager.instance.IsVibrate ? false : true;
+        vibrateImg.sprite = GameManager.instance.IsVibrate ? vibrateOn : vibrateOff;
     }
 }

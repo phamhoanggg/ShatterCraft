@@ -8,6 +8,6 @@ public class Hammer : Weapon
     // Update is called once per frame
     void Update()
     {
-        hammerAnim.speed = ATKSpeed;
+        hammerAnim.speed = GameManager.instance.IsState(Enums.GameState.Playing) ? ATKSpeed : 0;
     }
 }

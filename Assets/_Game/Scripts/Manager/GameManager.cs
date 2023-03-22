@@ -25,15 +25,13 @@ public class GameManager : FastSingleton<GameManager>
 
     public UIGamePlay GamePlayObject;
 
+    public bool IsVibrate;
+
     protected override void Awake()
     {
         base.Awake();
+        IsVibrate = true;
         GamePlayObject = UI_Manager.instance.OpenUI<UIGamePlay>();
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-
     }
 
     // Update is called once per frame
@@ -98,11 +96,12 @@ public class GameManager : FastSingleton<GameManager>
 
     public void PauseGame()
     {
-
+        
     }
 
     public void ResumeGame()
     {
+        
         gameState = Enums.GameState.Playing;
     }
 
