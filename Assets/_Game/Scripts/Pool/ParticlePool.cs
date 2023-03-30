@@ -113,7 +113,7 @@ public static class ParticlePool
                 inactive.Insert(index, obj);
             }
 
-            obj.transform.SetPositionAndRotation(new Vector3(pos.x, 0, pos.z), rot);
+            obj.transform.SetPositionAndRotation(pos, rot);
             obj.Play();
         }
 

@@ -5,25 +5,45 @@ using UnityEngine;
 public class ZombieSpawner : MonoBehaviour
 {
     [SerializeField] private Transform[] spawnPosition;
-    [SerializeField] private Zombie zombiePrefab;
-    public PathCreation.PathCreator[] pathCreatorsList;
-    private float zombieCounter;
+    [SerializeField] private Transform destination;
+    [SerializeField] private Wave[] waveList;
 
     public void OnInit()
     {
-        CancelInvoke();
-        zombieCounter = 0;
-        InvokeRepeating(nameof(SpawnZombie), 0, 0.5f);
-    }
-
-    void SpawnZombie()
-    {
-        if (GameManager.instance.IsState(Enums.GameState.Playing) && zombieCounter < LevelController.instance.CurrentLevel.LevelMaxValue)
+        for (int i = 0; i < waveList.Length; i++)
         {
-            zombieCounter++;
-            SimplePool.Spawn(zombiePrefab, spawnPosition[0].position, Quaternion.Euler(0, 0, 0)).OnInit();
+            StartCoroutine(SpawnWave(waveList[i], waveList[i].StartTime));
         }
     }
+
+    IEnumerator SpawnWave(Wave wave, float spawnTime)
+    {
+        yield return new WaitUntil(() => GameManager.instance.IsState(Enums.GameState.Playing));    // Wait until game state is Playing
+        yield return new WaitForSeconds(spawnTime);
+        float cnt = 0;
+        while (cnt < wave.Amount)
+        {
+            for (int j = 0; j < wave.SpawnPosition.Length; j++)
+            {
+                cnt++;
+                Zombie zb = SimplePool.Spawn<Zombie>(wave.ZombiePrefab, wave.SpawnPosition[j].position, Quaternion.Euler(0, 0, 0));
+                zb.OnInit();
+            }
+
+            yield return new WaitForSeconds(0.8f);
+        }
+            
+        
+    }
+}
+
+[System.Serializable]
+public class Wave
+{
+    public Zombie ZombiePrefab;
+    public float Amount;
+    public float StartTime;
+    public Transform[] SpawnPosition;
 }
 
 

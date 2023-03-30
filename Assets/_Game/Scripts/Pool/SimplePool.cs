@@ -278,7 +278,7 @@ public static class SimplePool
     {
         return Spawn<T>(GetPrefabByType(poolType), localPoint, localRot, parent);
     }
-     static public T Spawn<T> (PoolType poolType, Transform parent) where T : GameUnit
+    static public T Spawn<T> (PoolType poolType, Transform parent) where T : GameUnit
     {
         return Spawn<T>(GetPrefabByType(poolType), parent);
     }

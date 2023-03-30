@@ -13,14 +13,14 @@ public class WeaponPlace : MonoBehaviour
 {
     [SerializeField] protected Transform weaponPosition;
     [SerializeField] protected Animator anim;
-    [SerializeField] protected Direct direction;
+    [SerializeField] protected float angleRotate;
     public Weapon WeaponPlaced { get; private set; }
     public bool IsPlaced;
 
     protected void Start()
     {
         IsPlaced = false;
-        weaponPosition.rotation = Quaternion.Euler(0, (int)direction, 0);
+        weaponPosition.localRotation = Quaternion.Euler(0, angleRotate, 0);
     }
     public void SetWeapon(PoolType weaponType)
     {

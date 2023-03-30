@@ -4,19 +4,19 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - WeaponPlace
   - Enemy
   - Weapon
+  - WeaponPlace
   - DeathZone
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - WeaponPlace
+  - Zombie
   - Water
   - UI
-  - Zombie
   - Ground
+  - WeaponPlace
   - 
   - 
   - 
@@ -44,7 +44,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: UI
-    uniqueID: 1361121537
     locked: 0

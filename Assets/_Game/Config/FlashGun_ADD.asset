@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FlashGun_ADD
   m_EditorClassIdentifier: 
   Type: 1
-  WeaponType: 5
+  WeaponType: 4
   WeaponSprite: {fileID: 21300000, guid: 84bc9d14390ce074a9cd4768f602d7f0, type: 3}
-  BGSprite: {fileID: -1251519782, guid: d256667e19af2784bb0c89095fed67e8, type: 3}
+  BGSprite: {fileID: -781413323551494003, guid: d256667e19af2784bb0c89095fed67e8, type: 3}
   Cost: 125

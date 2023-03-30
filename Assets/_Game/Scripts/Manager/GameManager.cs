@@ -46,10 +46,10 @@ public class GameManager : FastSingleton<GameManager>
         if (gameState == Enums.GameState.Playing && Input.GetMouseButtonDown(0))
         {
             Ray myRay = MainCamera.ScreenPointToRay(Input.mousePosition);
-            Debug.DrawRay(myRay.origin, myRay.direction * 100, Color.red);
+
             if (Physics.Raycast(myRay, out RaycastHit hit, 100, ZombieLayer))
             {   
-                Cache.GetZombie(hit.collider).OnHit(5);
+                Cache.GetZombie(hit.collider).OnHit(500);
             }
         }
     }
@@ -96,12 +96,12 @@ public class GameManager : FastSingleton<GameManager>
 
     public void PauseGame()
     {
-        
+        Time.timeScale = 0;
     }
 
     public void ResumeGame()
     {
-        
+        Time.timeScale = 1;
         gameState = Enums.GameState.Playing;
     }
 
@@ -162,7 +162,6 @@ public class GameManager : FastSingleton<GameManager>
 
     public void SetCoin(float value)
     {
-        Debug.Log("Set Coin");
         CoinAmount = value;
         GamePlayObject.CoinText.text = CoinAmount.ToString();
     }

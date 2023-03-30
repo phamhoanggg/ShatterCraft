@@ -12,10 +12,13 @@ public class Level : MonoBehaviour
     public float WeaponProgressValue;
 
     public WeaponPlace[] WeaponPlacesList;
-
+    public Transform[] DestinationList;
     public void OnInit()
     {
+        gameObject.SetActive(true);
         Spawner.OnInit();
+        LevelProgressValue = 0;
+        WeaponProgressValue = 0;
         GameManager.instance.GamePlayObject.levelText.text = "LEVEL " + LevelController.instance.curLevelIdx;
         GameManager.instance.GamePlayObject.SetLevelProgressValue(0);
         GameManager.instance.GamePlayObject.SetWeaponProgressValue(0);
@@ -30,10 +33,12 @@ public class Level : MonoBehaviour
                 if (action == Enums.UpgradeType.RANGE)
                 {
                     WeaponPlacesList[i].WeaponPlaced.RangeUp();
-                }else if (action == Enums.UpgradeType.SIZE)
+                }
+                else if (action == Enums.UpgradeType.SIZE)
                 {
                     WeaponPlacesList[i].WeaponPlaced.SizeUp();
-                }else if (action == Enums.UpgradeType.SPEED)
+                }
+                else if (action == Enums.UpgradeType.SPEED)
                 {
                     WeaponPlacesList[i].WeaponPlaced.SpeedUp();
                 }

@@ -138,7 +138,10 @@ public class ParticleAmount
 
 public enum ParticleType
 {
-    Hit
+    Hit_1,
+    Hit_2,
+    Hit_3,
+    Hit_4,
 }
 
 public enum PoolType
@@ -146,10 +149,13 @@ public enum PoolType
     None,
     ChainSaw,
     Hammer,
-    Zombie,
     PointText,
     FlashGun,
     Bullet,
+    SmallZombie,
+    MediumZombie,
+    MiniBoss,
+    Boss,
 }
 
 

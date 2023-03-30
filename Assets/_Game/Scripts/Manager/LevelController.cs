@@ -52,6 +52,7 @@ public class LevelController : FastSingleton<LevelController>
 
     public void NextLevel()
     {
+        SimplePool.CollectAll();
         if (CurrentLevel != null)
         {
             CurrentLevel.gameObject.SetActive(false);
@@ -68,6 +69,7 @@ public class LevelController : FastSingleton<LevelController>
         {
             CurrentLevel.WeaponPlacesList[i].IsPlaced = false;
         }
+        CurrentLevel.gameObject.SetActive(false);
         StartLevel();
     }
 

@@ -9,7 +9,7 @@ public class PointText : GameUnit
     [SerializeField] private RectTransform rectTf;
     public override void OnInit()
     {
-        Invoke(nameof(OnDespawn), 0.5f);
+        Invoke(nameof(OnDespawn), 1f);
         rectTf.position -= new Vector3(0, rectTf.position.y, 0);
     }
 
