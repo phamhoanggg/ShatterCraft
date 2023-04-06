@@ -33,7 +33,7 @@ public class Bullet : GameUnit
             TF.rotation = Quaternion.Euler(90, 0, 180 - angle);
 
             bulletTf.position += (target.position - bulletTf.position).normalized * speed * Time.fixedDeltaTime;
-            bulletTf.position = new Vector3(bulletTf.position.x, 0.1f, bulletTf.position.z);
+            //bulletTf.position = new Vector3(bulletTf.position.x, 0.1f, bulletTf.position.z);
         }
         else
         {

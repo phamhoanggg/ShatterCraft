@@ -12,7 +12,6 @@ public class Level : MonoBehaviour
     public float WeaponProgressValue;
 
     public WeaponPlace[] WeaponPlacesList;
-    public Transform[] DestinationList;
     public void OnInit()
     {
         gameObject.SetActive(true);

@@ -8,9 +8,11 @@ public static class Cache
     public const string ANIM_DEAD = "die";
     public const string ANIM_HIGHLIGHT = "highlight";
     public const string ANIM_NORMAL = "normal";
+    public const string ANIM_INCREASE = "increase";
 
     public const string TAG_WEAPON = "Weapon";
     public const string TAG_DEATHZONE = "DeathZone";
+    public const string TAG_CHECHPOINT = "CheckPoint";
     public const string TAG_ENEMY = "Enemy";
 
     #endregion

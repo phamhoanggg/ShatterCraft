@@ -25,18 +25,7 @@ public class UI_Manager : FastSingleton<UI_Manager>
     private void Start()
     {
         Scaler.matchWidthOrHeight = (Screen.width * 1.0 / Screen.height < 9.0 / 16) ? 0 : 1;
-        if ((Screen.width * 1.0 / Screen.height < 9.0 / 16))
-        {
-            GameManager.instance.MainCamera.fieldOfView = 70;
-        }
-        else if ((Screen.width * 1.0 / Screen.height > 9.0 / 16))
-        {
-            GameManager.instance.MainCamera.fieldOfView = 54;
-        }
-        else
-        {
-            GameManager.instance.MainCamera.fieldOfView = 60;
-        }
+        
     }
     public T OpenUI<T>() where T : UICanvas
     {

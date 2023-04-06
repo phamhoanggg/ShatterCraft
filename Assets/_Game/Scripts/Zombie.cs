@@ -9,21 +9,22 @@ public class Zombie : GameUnit
     [SerializeField] private Rigidbody zombieRb;
     [SerializeField] private Animator animator;
     [SerializeField] private float zombieDefaultHP;
+    [SerializeField] private float speed;
     [SerializeField] private float point;
     [SerializeField] private float coin;
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private ParticleType hitType;
-    
+
     public bool isDead;
+    public Transform[] Path;
     private float currentHP;
-    private int desIndex;
+    private int pathIndex;
     public override void OnInit()
     {
         agent.enabled = true;
 
-        desIndex = 0;
-        agent.destination = LevelController.instance.CurrentLevel.DestinationList[desIndex].position;
-        
+        pathIndex = 0;
+        agent.destination = Path[pathIndex].position;
         isDead = false;
         currentHP = zombieDefaultHP;
     }
@@ -32,22 +33,18 @@ public class Zombie : GameUnit
     {
         if (GameManager.instance.IsState(Enums.GameState.Playing))
         {
-            if (Vector3.Distance(zombieTf.position, LevelController.instance.CurrentLevel.DestinationList[desIndex].position) < 2f)
-            {
-                desIndex++;
-                agent.destination = LevelController.instance.CurrentLevel.DestinationList[desIndex].position;
-            }
-            else
-            {
-                agent.destination = LevelController.instance.CurrentLevel.DestinationList[desIndex].position;
-            }
+            DetectOther();
         }
     }
 
     public override void OnDespawn()
     {
-        agent.enabled = false;
         SimplePool.Despawn(this);    
+    }
+
+    private void OnDisable()
+    {
+        agent.enabled = false;
     }
 
     public void OnHit(float dmg)
@@ -76,6 +73,7 @@ public class Zombie : GameUnit
             GameManager.instance.SetCoin(GameManager.instance.CoinAmount + coin);
             LevelController.instance.CurrentLevel.LevelProgressValue++;
             OnDespawn();
+            GameManager.instance.GamePlayObject.PlayAnim(Cache.ANIM_INCREASE);
         } 
     }
 
@@ -98,9 +96,54 @@ public class Zombie : GameUnit
                 text.SetText(5);
                 Vibrator.Vibrate(100);
             }
+
+            if (other.CompareTag(Cache.TAG_CHECHPOINT) && pathIndex < Path.Length - 1 && GameManager.instance.IsState(Enums.GameState.Playing)){
+                pathIndex++;
+                agent.destination = Path[pathIndex].position;
+            }
         }
     }
 
+    public void DetectOther()
+    {
+        if (Physics.Raycast(zombieTf.position + Vector3.up, Quaternion.AngleAxis(zombieTf.eulerAngles.y, Vector3.up) * Vector3.forward * 0.8f, out RaycastHit hit, 1f, GameManager.instance.ZombieLayer))
+        {
+            if (hit.collider.gameObject != this.gameObject)
+            {
+                agent.speed = 0.5f;
+                zombieRb.velocity = Quaternion.AngleAxis(zombieTf.eulerAngles.y + 30, Vector3.up) * Vector3.forward * 0.5f;
+            }
 
-    
+        }
+        else if (Physics.Raycast(zombieTf.position + Vector3.up, Quaternion.AngleAxis(zombieTf.eulerAngles.y + 30, Vector3.up) * Vector3.forward * 0.8f, out RaycastHit hit1, 1f, GameManager.instance.ZombieLayer))
+        {
+            if (hit1.collider.gameObject != this.gameObject)
+            {
+                agent.speed = 0.5f;
+                zombieRb.velocity = Quaternion.AngleAxis(zombieTf.eulerAngles.y - 30, Vector3.up) * Vector3.forward * 0.5f;
+            }
+
+        }
+        else if (Physics.Raycast(zombieTf.position + Vector3.up, Quaternion.AngleAxis(zombieTf.eulerAngles.y - 30, Vector3.up) * Vector3.forward * 0.8f, out RaycastHit hit2, 1f, GameManager.instance.ZombieLayer))
+        {
+            if (hit2.collider.gameObject != this.gameObject)
+            {
+                agent.speed = 0.5f;
+                zombieRb.velocity = Quaternion.AngleAxis(zombieTf.eulerAngles.y + 30, Vector3.up) * Vector3.forward * 0.5f;
+            }
+
+
+        }
+        else
+        {
+            agent.speed = speed;
+            
+        }
+
+        //Debug.DrawRay(zombieTf.position + Vector3.up, Quaternion.AngleAxis(zombieTf.eulerAngles.y - 30, Vector3.up) * Vector3.forward);
+        //Debug.DrawRay(zombieTf.position + Vector3.up, Quaternion.AngleAxis(zombieTf.eulerAngles.y + 30, Vector3.up) * Vector3.forward);
+
+    }
+
+
 }

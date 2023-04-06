@@ -9,10 +9,14 @@ public class DynamicWeaponPlace : WeaponPlace
     // Update is called once per frame
     void FixedUpdate()
     {
-        weaponPosition.position += Vector3.right * swingSpeed;
-        if (Vector3.Distance(weaponPosition.position, posA.position) < 0.1f || Vector3.Distance(weaponPosition.position, posB.position) < 0.1f)
+        if (GameManager.instance.IsState(Enums.GameState.Playing) && IsPlaced)
         {
-            swingSpeed *= -1;
+            weaponPosition.localPosition += Vector3.right * swingSpeed;
+            if (Vector3.Distance(weaponPosition.localPosition, posA.localPosition) < 0.1f || Vector3.Distance(weaponPosition.localPosition, posB.localPosition) < 0.1f)
+            {
+                swingSpeed *= -1;
+            }
         }
+        
     }
 }

@@ -7,6 +7,7 @@ public class UICanvas : MonoBehaviour
     public bool IsDestroyOnClose = false;
 
     protected RectTransform m_RectTransform;
+    protected Animator anim;
     private bool m_IsInit = false;
     private float m_OffsetY = 0;
 
@@ -18,6 +19,7 @@ public class UICanvas : MonoBehaviour
     protected void Init()
     {
         m_RectTransform = GetComponent<RectTransform>();
+        anim = GetComponent<Animator>();
     }
 
     public virtual void Setup()
@@ -34,7 +36,7 @@ public class UICanvas : MonoBehaviour
     public virtual void Open()
     {
         gameObject.SetActive(true);
-        //anim
+        
     }
 
     public virtual void Close()

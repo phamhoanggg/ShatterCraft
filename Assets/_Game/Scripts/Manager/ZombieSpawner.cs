@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class ZombieSpawner : MonoBehaviour
 {
-    [SerializeField] private Transform[] spawnPosition;
-    [SerializeField] private Transform destination;
     [SerializeField] private Wave[] waveList;
-
+    
     public void OnInit()
     {
         for (int i = 0; i < waveList.Length; i++)
@@ -27,10 +25,12 @@ public class ZombieSpawner : MonoBehaviour
             {
                 cnt++;
                 Zombie zb = SimplePool.Spawn<Zombie>(wave.ZombiePrefab, wave.SpawnPosition[j].position, Quaternion.Euler(0, 0, 0));
+                zb.Path = wave.Path;
                 zb.OnInit();
+                yield return new WaitForSeconds(0.2f);
             }
 
-            yield return new WaitForSeconds(0.8f);
+            yield return new WaitForSeconds(0.2f);
         }
             
         
@@ -44,6 +44,7 @@ public class Wave
     public float Amount;
     public float StartTime;
     public Transform[] SpawnPosition;
+    public Transform[] Path;
 }
 
 

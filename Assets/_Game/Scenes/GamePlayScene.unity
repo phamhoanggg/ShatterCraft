@@ -106,15 +106,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 0.25
     agentHeight: 2
     agentSlope: 32.2
-    agentClimb: 0.4
+    agentClimb: 0.09
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.083333336
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 6859e7adae7f780429034347426dba22, type: 2}
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &46891680
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,7 +502,7 @@ MonoBehaviour:
     amount: 1
   - root: {fileID: 952537410}
     particleType: 1
-    prefab: {fileID: 6548231135810452664, guid: 90309772033050e4c9e12aadf071de6e, type: 3}
+    prefab: {fileID: 6548231135810452664, guid: 0af2133a9b34a7842a8bd769f0b1fa4b, type: 3}
     amount: 1
   - root: {fileID: 952537410}
     particleType: 2
@@ -738,6 +738,36 @@ Transform:
   m_Father: {fileID: 660050416}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1236979220
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1236979221}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1236979221
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236979220}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1308570505
 GameObject:
   m_ObjectHideFlags: 0
@@ -747,6 +777,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1308570508}
+  - component: {fileID: 1308570509}
   - component: {fileID: 1308570507}
   - component: {fileID: 1308570506}
   m_Layer: 0
@@ -780,7 +811,7 @@ Camera:
   m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
+  m_FocalLength: 19.58222
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -789,7 +820,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 70
+  field of view: 63
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -814,13 +845,27 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308570505}
-  m_LocalRotation: {x: 0.4456236, y: -0.5513323, z: 0.43788895, w: 0.5529065}
-  m_LocalPosition: {x: 14.04, y: 21.46, z: 5.44}
+  m_LocalRotation: {x: 0.25421295, y: -0.7236774, z: 0.5308121, w: 0.36042395}
+  m_LocalPosition: {x: 7.3, y: 17.9, z: 7.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 77.323, y: -91.33, z: -1.867}
+  m_LocalEulerAnglesHint: {x: 72.087, y: -125.056, z: 2.739}
+--- !u!114 &1308570509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308570505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f890f2499636b942ad902d1228c02a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraTF: {fileID: 1308570508}
+  zIndex: 5
 --- !u!1 &1440293777
 GameObject:
   m_ObjectHideFlags: 0
@@ -877,6 +922,7 @@ MonoBehaviour:
     m_Bits: 8
   GamePlayObject: {fileID: 0}
   IsVibrate: 0
+  IsCameraDragging: 0
 --- !u!4 &1440293779
 Transform:
   m_ObjectHideFlags: 0
@@ -904,9 +950,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listLevel:
-  - {fileID: 8028555780662713858, guid: 79587f37ff979354da30d8ff2946ccfd, type: 3}
-  - {fileID: 475335985735888950, guid: 8dc38de89c359d348b3279b743f36490, type: 3}
   - {fileID: 5280578407024480013, guid: 197130bda0cab7f48931b69f7625b8e6, type: 3}
+  - {fileID: 4968141122983740, guid: 79587f37ff979354da30d8ff2946ccfd, type: 3}
+  - {fileID: 475335985735888950, guid: 8dc38de89c359d348b3279b743f36490, type: 3}
   CurrentLevel: {fileID: 0}
   curLevelIdx: 0
 --- !u!114 &1440293781

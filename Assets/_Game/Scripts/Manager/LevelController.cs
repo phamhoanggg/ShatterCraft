@@ -69,6 +69,7 @@ public class LevelController : FastSingleton<LevelController>
         {
             CurrentLevel.WeaponPlacesList[i].IsPlaced = false;
         }
+        UI_Manager.instance.CloseUI<UISelectUpgrade>();
         CurrentLevel.gameObject.SetActive(false);
         StartLevel();
     }

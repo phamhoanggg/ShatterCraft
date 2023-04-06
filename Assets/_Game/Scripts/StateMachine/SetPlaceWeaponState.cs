@@ -16,7 +16,7 @@ public class SetPlaceWeaponState : IState
             Ray myRay = GameManager.instance.MainCamera.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(myRay, out RaycastHit hit, 100, GameManager.instance.WeaponPlaceLayer))
             {
-                if (GameManager.instance.SelectedWeapon != PoolType.None)
+                if (GameManager.instance.SelectedWeapon != PoolType.None && Cache.GetWeaponPlace(hit.collider).IsPlaced == false)
                 {
                     GameManager.instance.DisplayPlaced();
                     Cache.GetWeaponPlace(hit.collider).SetWeapon(GameManager.instance.SelectedWeapon);

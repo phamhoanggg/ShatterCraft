@@ -27,6 +27,7 @@ public class GameManager : FastSingleton<GameManager>
 
     public bool IsVibrate;
 
+    public bool IsCameraDragging;
     protected override void Awake()
     {
         base.Awake();
@@ -37,7 +38,6 @@ public class GameManager : FastSingleton<GameManager>
     // Update is called once per frame
     void Update()
     {
-
         if (gamePhase != null)
         {
             gamePhase.OnExecute();

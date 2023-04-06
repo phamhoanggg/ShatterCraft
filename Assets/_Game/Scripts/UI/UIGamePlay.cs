@@ -43,4 +43,19 @@ public class UIGamePlay : UICanvas
         GameManager.instance.IsVibrate = GameManager.instance.IsVibrate ? false : true;
         vibrateImg.sprite = GameManager.instance.IsVibrate ? vibrateOn : vibrateOff;
     }
+
+    public void ClickDragCameraBtn()
+    {
+        if (GameManager.instance.IsState(Enums.GameState.Playing))
+        {
+            GameManager.instance.IsCameraDragging = true;
+            UI_Manager.instance.CloseUI<UIGamePlay>();
+        }
+        
+    }
+
+    public void PlayAnim(string anim)
+    {
+        this.anim.SetTrigger(anim);
+    }
 }

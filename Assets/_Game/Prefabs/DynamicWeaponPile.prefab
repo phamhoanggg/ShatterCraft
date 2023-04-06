@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1778979513423431346}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: PosB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,9 +24,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778979513423431309}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.15918255, y: 0.012516558, z: -0.054065704}
+  m_LocalPosition: {x: -0.15918255, y: 0.071, z: -0.054065704}
   m_LocalScale: {x: 0.8837, y: 0.1376, z: 0.15872}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1778979514314436869}
   m_RootOrder: 2
@@ -43,7 +42,7 @@ GameObject:
   - component: {fileID: 1778979513541756418}
   - component: {fileID: 1778979513541756444}
   - component: {fileID: 1778979513541756447}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,9 +57,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778979513541756446}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2013669, y: -0.111323446, z: -0.054065704}
+  m_LocalPosition: {x: 0.2013669, y: 0, z: -0.054065704}
   m_LocalScale: {x: 0.8837, y: 0.1376, z: 0.15872}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1778979514314436869}
   m_RootOrder: 3
@@ -84,7 +82,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -139,7 +136,8 @@ GameObject:
   - component: {fileID: 1778979514314436869}
   - component: {fileID: 1778979514314436868}
   - component: {fileID: 9190823113395690081}
-  m_Layer: 3
+  - component: {fileID: 1292339058721455191}
+  m_Layer: 7
   m_Name: DynamicWeaponPile
   m_TagString: WeaponPlace
   m_Icon: {fileID: 0}
@@ -155,8 +153,7 @@ Transform:
   m_GameObject: {fileID: 1778979514314436871}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.721633, y: 0.06352344, z: -0.7249343}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 6.0931773, y: 6.093177, z: 6.0931773}
   m_Children:
   - {fileID: 1778979514552490458}
   - {fileID: 1778979514429499222}
@@ -179,7 +176,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponPosition: {fileID: 1778979514552490458}
   anim: {fileID: 1778979514552490454}
-  direction: 180
+  angleRotate: 180
+  IsPlaced: 0
   posA: {fileID: 1778979514429499222}
   posB: {fileID: 1778979513423431346}
   swingSpeed: 0.01
@@ -191,12 +189,28 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778979514314436871}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.43716335
   m_Height: 1.000045
   m_Direction: 1
   m_Center: {x: 0.22464275, y: -0.06321901, z: 0}
+--- !u!208 &1292339058721455191
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778979514314436871}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.41, y: 0.3, z: 0.055}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.2, y: 0, z: -0.04}
+  m_TimeToStationary: 0.5
 --- !u!1 &1778979514429499217
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,7 +220,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1778979514429499222}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: PosA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,9 +235,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778979514429499217}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5530796, y: 0.012516558, z: -0.054065704}
+  m_LocalPosition: {x: 0.5530796, y: 0.089, z: -0.054065704}
   m_LocalScale: {x: 0.8837, y: 0.1376, z: 0.15872}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1778979514314436869}
   m_RootOrder: 1
@@ -241,7 +254,7 @@ GameObject:
   - component: {fileID: 1778979514552490452}
   - component: {fileID: 1778979514552490455}
   - component: {fileID: 1778979514552490454}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: WeaponPlace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,14 +268,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778979514552490449}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.030162334, y: 0.012516558, z: -0.054065704}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0.47, y: 0.155, z: -0.054}
   m_LocalScale: {x: 0.13255501, y: 0.10490406, z: 0.13255504}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1778979514314436869}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &1778979514552490453
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -282,7 +294,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -329,7 +340,7 @@ CapsuleCollider:
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!95 &1778979514552490454
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -337,13 +348,13 @@ Animator:
   m_GameObject: {fileID: 1778979514552490449}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 76941a67f534a0b48bdab9f0572b02bd, type: 2}
+  m_Controller: {fileID: 9100000, guid: 14cd514b2ff2009408a86652693984e6, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0

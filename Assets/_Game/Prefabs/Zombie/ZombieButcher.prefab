@@ -42,8 +42,8 @@ GameObject:
   - component: {fileID: 951515340460073005}
   - component: {fileID: 6108002369478613409}
   - component: {fileID: 8818827960331437767}
-  - component: {fileID: 1596956434868382913}
-  - component: {fileID: 1393080916}
+  - component: {fileID: -3560930915775590338}
+  - component: {fileID: -6052801831456734923}
   m_Layer: 3
   m_Name: ZombieButcher
   m_TagString: Enemy
@@ -60,7 +60,7 @@ Transform:
   m_GameObject: {fileID: 141054116936589286}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 0.008, y: 0.008, z: 0.008}
   m_Children:
   - {fileID: 6104250593586515876}
   - {fileID: 7610034243557534154}
@@ -101,14 +101,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolType: 8
   zombieTf: {fileID: 774284146924897628}
-  zombieRb: {fileID: 1596956434868382913}
+  zombieRb: {fileID: -3560930915775590338}
   animator: {fileID: 951515340460073005}
   zombieDefaultHP: 1500
+  speed: 1.5
   point: 10
   coin: 20
-  agent: {fileID: 1393080916}
+  agent: {fileID: -6052801831456734923}
   hitType: 2
   isDead: 0
+  Path: []
 --- !u!136 &8818827960331437767
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -119,11 +121,11 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 64.384125
-  m_Height: 244.25587
+  m_Radius: 68.40401
+  m_Height: 210.93137
   m_Direction: 1
-  m_Center: {x: 4.380858, y: 63.52613, z: 24.695475}
---- !u!54 &1596956434868382913
+  m_Center: {x: 6.0525084, y: 46.863888, z: 39.974323}
+--- !u!54 &-3560930915775590338
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,13 +135,13 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
+  m_AngularDrag: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!195 &1393080916
+--- !u!195 &-6052801831456734923
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,10 +151,10 @@ NavMeshAgent:
   m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 2
+  m_Speed: 3.5
   m_Acceleration: 8
-  avoidancePriority: 99
-  m_AngularSpeed: 200
+  avoidancePriority: 30
+  m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
@@ -160,7 +162,7 @@ NavMeshAgent:
   m_Height: 2
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 0
+  m_ObstacleAvoidanceType: 2
 --- !u!1 &319535576876752799
 GameObject:
   m_ObjectHideFlags: 0
